@@ -15,9 +15,15 @@ public class AutoSaveHandler {
 	private static boolean isRunning;
 	
 	public static void beginAutoSave(JavaPlugin plugin) {
+		if(isRunning) return;
 		isRunning = true;
 		autosaver = new AutoSaveTask();
 		autosaver.runTaskTimerAsynchronously(plugin, 0, 18000);
+	}
+	
+	public static void endAutoSave() {
+		autosaver.cancel();
+		isRunning = false;
 	}
 	
 	private static class AutoSaveTask extends BukkitRunnable {
@@ -33,11 +39,6 @@ public class AutoSaveHandler {
 			AutoSaveEvent autosave = new AutoSaveEvent(savedWorlds, timeSaved, "Saved worlds at time: " + timeSaved);
 			Bukkit.getPluginManager().callEvent(autosave);
 		}
-	}
-	
-	public static void endAutoSave() {
-		autosaver.cancel();
-		isRunning = false;
 	}
 	
 	public static boolean isRunning() {

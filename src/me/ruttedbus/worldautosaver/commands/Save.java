@@ -9,7 +9,7 @@ import org.bukkit.command.CommandSender;
 public class Save implements CommandExecutor {
 	
 	public boolean onCommand(CommandSender sender, Command cmd, String label, String[] args) {
-		if(sender.hasPermission("mapmanager.command.save")) {
+		if(sender.hasPermission("autosaver.command.save")) {
 			if(Bukkit.getServer().getWorld(args[0]) != null) {
 				Bukkit.getServer().getWorld(args[0]).save();
 			}
