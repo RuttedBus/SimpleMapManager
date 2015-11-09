@@ -36,7 +36,7 @@ public class AutoSaveHandler {
 				}
 			}
 			long timeSaved = System.currentTimeMillis();
-			AutoSaveEvent autosave = new AutoSaveEvent(savedWorlds, timeSaved, "Saved worlds at time: " + timeSaved);
+			AutoSaveEvent autosave = new AutoSaveEvent(savedWorlds, timeSaved, "Saved worlds at time: " + timeSaved + ". " + savedWorlds.size() + " worlds saved.");
 			Bukkit.getPluginManager().callEvent(autosave);
 		}
 	}
