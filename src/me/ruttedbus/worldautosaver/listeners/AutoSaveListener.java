@@ -6,7 +6,7 @@ import org.bukkit.Bukkit;
 import org.bukkit.event.Listener;
 
 public class AutoSaveListener implements Listener {
-	
+	@EventHandler
 	public void onAutoSave(AutoSaveEvent e) {
 		Bukkit.broadcastMessage(e.getMessage());
 	}
