@@ -11,7 +11,7 @@ import org.bukkit.plugin.java.JavaPlugin;
 public class EndAutoSave implements CommandExecutor {
 	
 	public boolean onCommand(CommandSender sender, Command cmd, String label, String[] args) {
-		if(sender.hasPermission("autosaver.command.endautosave")) {
+		if(sender.hasPermission("autosaver.commands.endautosave")) {
 			if(AutoSaveHandler.isRunning()) {
 				AutoSaveHandler.endAutoSave();
 				sender.sendMessage(ChatColor.GOLD + "Auto-saving has been disabled.");

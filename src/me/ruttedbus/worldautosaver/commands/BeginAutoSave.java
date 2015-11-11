@@ -15,7 +15,7 @@ public class BeginAutoSave implements CommandExecutor {
 	}
 	
 	public boolean onCommand(CommandSender sender, Command cmd, String label, String[] args) {
-		if(sender.hasPermission("autosaver.command.beginautosave")) {
+		if(sender.hasPermission("autosaver.commands.beginautosave")) {
 			if(!AutoSaveHandler.isRunning()) {
 				AutoSaveHandler.beginAutoSave(plugin);
 				sender.sendMessage(ChatColor.GOLD + "Auto-saving has been enabled!");

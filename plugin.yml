@@ -1,0 +1,17 @@
+name: WorldAutoSaver
+author: Josue Lopez
+main: me.ruttedbus.worldautosaver.WorldAutoSaver
+version: 1.0
+website: https://github.com/RuttedBus
+description: "Automater for world saving."
+commands:
+    bas:
+      description: "Begin's the auto saving counter, if not already started." 
+    eas:
+      description: "End's the auto saving counter, if already started."
+    save:
+      description: "Saves the world which has first argument as name." 
+    saveall:
+      description: "Saves all the worlds on the server." 
+    savecurrent:
+      description: "Saves the current world you are on."

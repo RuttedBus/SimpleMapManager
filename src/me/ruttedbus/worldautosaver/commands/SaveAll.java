@@ -12,7 +12,7 @@ import org.bukkit.command.CommandSender;
 
 public class SaveAll implements CommandExecutor {
 	public boolean onCommand(CommandSender sender, Command cmd, String label, String[] args) {
-		if(sender.hasPermission("worldautosaver.command.saveall")) {
+		if(sender.hasPermission("worldautosaver.commands.saveall")) {
 			List<World> savedWorlds = new ArrayList<World>();
 			for(World w : Bukkit.getServer().getWorlds()){
 				if(w != null) {

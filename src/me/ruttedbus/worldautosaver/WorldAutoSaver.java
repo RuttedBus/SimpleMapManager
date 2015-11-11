@@ -4,6 +4,7 @@ import me.ruttedbus.worldautosaver.commands.BeginAutoSave;
 import me.ruttedbus.worldautosaver.commands.EndAutoSave;
 import me.ruttedbus.worldautosaver.commands.Save;
 import me.ruttedbus.worldautosaver.commands.SaveAll;
+import me.ruttedbus.worldautosaver.commands.SaveCurrent;
 import me.ruttedbus.worldautosaver.listeners.AutoSaveListener;
 import me.ruttedbus.worldautosaver.util.AutoSaveHandler;
 
@@ -12,10 +13,7 @@ import org.bukkit.plugin.java.JavaPlugin;
 
 public class WorldAutoSaver extends JavaPlugin {
 	public void onEnable() {
-		saveDefaultConfig();
-		if(getConfig().getBoolean("Auto save on enable")) {
-			AutoSaveHandler.beginAutoSave(this);
-		}
+		AutoSaveHandler.beginAutoSave(this);
 		Bukkit.getPluginManager().registerEvents(new AutoSaveListener(), this);
 		registerCommands();
 	}
@@ -30,6 +28,7 @@ public class WorldAutoSaver extends JavaPlugin {
 			getCommand("eas").setExecutor(new EndAutoSave());
 			getCommand("save").setExecutor(new Save());
 			getCommand("saveall").setExecutor(new SaveAll());
+			getCommand("savecurrent").setExecutor(new SaveCurrent());
 		}
 		catch(NullPointerException e) {
 			getLogger().warning("One or more commands in the plugin.yml for WorldAutoSaver is not set up correctly! Now disabling WorldAutoSaver...");
